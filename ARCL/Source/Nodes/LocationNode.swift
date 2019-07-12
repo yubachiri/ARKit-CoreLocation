@@ -13,6 +13,7 @@ import CoreLocation
 /// This node type enables the client to have access to the view or image that
 /// was used to initialize the `LocationAnnotationNode`.
 open class AnnotationNode: SCNNode {
+    public var tag: String?
     public var view: UIView?
     public var image: UIImage?
 

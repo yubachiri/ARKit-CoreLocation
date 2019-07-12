@@ -14,13 +14,15 @@ open class LocationAnnotationNode: LocationNode {
     /// Required to allow scaling at the same time as having a 2D 'billboard' appearance
     public let annotationNode: AnnotationNode
 
-    public init(location: CLLocation?, image: UIImage) {
+    public init(location: CLLocation?, image: UIImage, tag: String) {
         let plane = SCNPlane(width: image.size.width / 100, height: image.size.height / 100)
         plane.firstMaterial!.diffuse.contents = image
         plane.firstMaterial!.lightingModel = .constant
 
         annotationNode = AnnotationNode(view: nil, image: image)
         annotationNode.geometry = plane
+        annotationNode.tag = tag
+        annotationNode.removeFlicker()
 
         super.init(location: location)
 
@@ -40,7 +42,7 @@ open class LocationAnnotationNode: LocationNode {
     ///   - location: The location of the node in the world.
     ///   - view: The view to display at the specified location.
     public convenience init(location: CLLocation?, view: UIView) {
-        self.init(location: location, image: view.image)
+        self.init(location: location, image: view.image, tag: "dummy")
     }
 
     required public init?(coder aDecoder: NSCoder) {
