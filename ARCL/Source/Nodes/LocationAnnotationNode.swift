@@ -22,7 +22,6 @@ open class LocationAnnotationNode: LocationNode {
         annotationNode = AnnotationNode(view: nil, image: image)
         annotationNode.geometry = plane
         annotationNode.tag = tag
-        annotationNode.removeFlicker()
 
         super.init(location: location)
 
