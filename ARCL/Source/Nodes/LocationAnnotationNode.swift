@@ -37,6 +37,7 @@ open class LocationAnnotationNode: LocationNode {
         constraints = [billboardConstraint]
 
         addChildNode(annotationNode)
+        addChildNode(labelNode)
     }
 
     @available(iOS 10.0, *)

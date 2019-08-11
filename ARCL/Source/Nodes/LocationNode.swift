@@ -8,6 +8,7 @@
 
 import Foundation
 import SceneKit
+import SpriteKit
 import CoreLocation
 
 /// This node type enables the client to have access to the view or image that
