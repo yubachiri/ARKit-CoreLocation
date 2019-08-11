@@ -23,6 +23,12 @@ open class LocationAnnotationNode: LocationNode {
         annotationNode.geometry = plane
         annotationNode.tag = tag
 
+        // この辺でtextnode追加する
+        let labelNode = SKLabelNode(text: "Hello World")
+        labelNode.fontSize = 20
+        labelNode.fontName = "San Fransisco"
+        labelNode.position = CGPoint(x:100,y:100)
+
         super.init(location: location)
 
         let billboardConstraint = SCNBillboardConstraint()
