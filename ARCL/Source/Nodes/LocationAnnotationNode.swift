@@ -7,6 +7,7 @@
 //
 import Foundation
 import SceneKit
+import SpriteKit
 import CoreLocation
 
 open class LocationAnnotationNode: LocationNode {
